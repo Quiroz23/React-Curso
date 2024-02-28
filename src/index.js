@@ -6,22 +6,13 @@ import { Saludar2, Usercard } from "./Saludar2";
 import { Boton } from "./Boton";
 import { CartaTarea } from "./Tarea";
 import { SaludarCom } from "./SaludarCom";
+import { Posts } from "./Post";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 root.render(
   <>
-    <CartaTarea ready={false} />
-    <SaludarCom />
-    <Boton text="Saludar" />
-
-    <form onSubmit={(e) => {
-      e.preventDefault()
-      alert("enviado")
-    }}>
-      <h1>Registro de usuario</h1>
-      <button>Enviar</button>
-    </form>
+  <Posts/>
   </>
 );
