@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Saludar, Boleano } from "./Saludar";
 import Producto from "./Producto";
@@ -10,28 +10,34 @@ import { Posts } from "./Post";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const users = [
-  {
-    id: 1,
-    name: "Cristian",
-    image: "https://robohash.org/User",
-  },
-  {
-    id: 2,
-    name: "Andres",
-    image: "https://robohash.org/User2",
-  },
-];
+function Contador() {
+  const [contador, setContador] = useState(0);
+
+  return (
+    <div>
+      <h1>Contador: {contador}</h1>
+      <button
+        onClick={() => {
+          setContador(contador + 1);
+        }}
+      >
+        Sumar
+      </button>
+
+      <button
+        onClick={() => {
+          setContador(contador - 1);
+        }}
+      >
+        Restar
+      </button>
+      <button onClick={() => setContador(0)}>Reiniciar</button>
+    </div>
+  );
+}
 
 root.render(
   <>
-    {users.map((user, i) => {
-      return (
-        <div key={i}>
-          <h1 >{user.name}</h1>
-          <img src={user.image} />
-        </div>
-      );
-    })}
+    <Contador />
   </>
 );
