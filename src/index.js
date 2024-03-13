@@ -10,9 +10,28 @@ import { Posts } from "./Post";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
+const users = [
+  {
+    id: 1,
+    name: "Cristian",
+    image: "https://robohash.org/User",
+  },
+  {
+    id: 2,
+    name: "Andres",
+    image: "https://robohash.org/User2",
+  },
+];
 
 root.render(
   <>
-  <Posts/>
+    {users.map((user, i) => {
+      return (
+        <div key={i}>
+          <h1 >{user.name}</h1>
+          <img src={user.image} />
+        </div>
+      );
+    })}
   </>
 );
