@@ -11,27 +11,14 @@ import { Posts } from "./Post";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function Contador() {
-  const [contador, setContador] = useState(0);
+  const [ mensaje , setMensaje] = useState('');
 
   return (
     <div>
-      <h1>Contador: {contador}</h1>
-      <button
-        onClick={() => {
-          setContador(contador + 1);
-        }}
-      >
-        Sumar
-      </button>
-
-      <button
-        onClick={() => {
-          setContador(contador - 1);
-        }}
-      >
-        Restar
-      </button>
-      <button onClick={() => setContador(0)}>Reiniciar</button>
+      <input onChange={e => setMensaje(e.target.value)}/>
+      <button onClick={()=> {
+        alert("El mensaje es: "+ mensaje )
+      } }>Guardar</button>
     </div>
   );
 }
